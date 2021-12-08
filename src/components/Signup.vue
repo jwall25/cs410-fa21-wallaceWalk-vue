@@ -93,7 +93,7 @@ export default {
       };
       // console.log(myFormData);
       axios
-        .post("/contacts", myFormData)
+        .post("/creators", myFormData)
         .then((myResponse) => {
           console.log(myResponse);
           this.$router.replace("/login?signupsuccess=true");

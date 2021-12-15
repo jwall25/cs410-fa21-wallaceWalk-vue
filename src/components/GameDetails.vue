@@ -28,6 +28,8 @@
         Sign In to Add a Walkthrough
       </button></router-link
     >
+    <br /><br />
+    <router-view />
   </div>
 </template>
 

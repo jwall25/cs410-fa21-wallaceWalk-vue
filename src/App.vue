@@ -19,6 +19,9 @@ export default {
   components: {
     "my-header": Header,
   },
+  created() {
+    this.$store.dispatch("getGames");
+  },
 };
 </script>
 

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import myStore from "./store.js";
 
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
@@ -13,7 +14,17 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: Home },
-    { path: "/account", component: Account },
+    {
+      path: "/account",
+      component: Account,
+      beforeEnter(to, from, next) {
+        if (myStore.state.token) {
+          next();
+        } else {
+          next("/");
+        }
+      },
+    },
     { path: "/login", component: Login },
     { path: "/games", component: Game },
     {

@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: "/games/:pk",
       component: GameDetail,
-      children: [{ path: "review", component: WalkCreate }],
+      children: [{ path: "walkthroughs", component: WalkCreate }],
     },
     { path: "/signup", component: Signup },
     { path: "/:invalidroute(.*)", component: NotFound },
